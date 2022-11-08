@@ -83,44 +83,52 @@ def move_C(grid, length, height, move_count):
             if int(current_pos[0] - 1) < 0:
                 print('Exceeds border. Passing...')
                 move_count['Exceeded'] += 1
+                print(f'{current_pos[0]}, {current_pos[1]}')
                 pass
             else:
                 grid[current_pos[0]][current_pos[1]] = '#'
                 grid[int(current_pos[0])-1][current_pos[1]] = 'C'
                 move_count['Up'] += 1
+                print(f'{current_pos[0], current_pos[1]} -> {current_pos[0] - 1, current_pos[1]}')
 
         case 'D':
             print('Down:')
             if int(current_pos[0] + 1) >= height:
                 print('Exceeds Border. Passing...')
                 move_count['Exceeded'] += 1
+                print(f'{current_pos[0]}, {current_pos[1]}')
                 pass
             else:
                 grid[current_pos[0]][current_pos[1]] = '#'
                 grid[int(current_pos[0])+1][current_pos[1]] = 'C'
                 move_count['Down'] += 1
+                print(f'{current_pos[0], current_pos[1]} -> {current_pos[0] + 1, current_pos[1]}')
 
         case 'L':
             print('Left:')
             if int(current_pos[1] - 1) < 0:
                 print('Exceeds border. Passing...')
                 move_count['Exceeded'] += 1
+                print(f'{current_pos[0]}, {current_pos[1]}')
                 pass
             else:
                 grid[current_pos[0]][current_pos[1]] = '#'
                 grid[current_pos[0]][int(current_pos[1])-1] = 'C'
                 move_count['Left'] += 1
+                print(f'{current_pos[0], current_pos[1]} -> {current_pos[0], current_pos[1] - 1}')
 
         case 'R':
             print('Right')
             if int(current_pos[1] + 1) >= length:
                 print('Exceeds border. Passing...')
                 move_count['Exceeded'] += 1
+                print(f'{current_pos[0]}, {current_pos[1]}')
                 pass
             else:
                 grid[current_pos[0]][current_pos[1]] = '#'
                 grid[current_pos[0]][int(current_pos[1])+1] = 'C'
                 move_count['Right'] += 1
+                print(f'{current_pos[0], current_pos[1]} -> {current_pos[0], current_pos[1] + 1}')
 
     return move_count
 
@@ -136,10 +144,3 @@ def print_grid(grid):
 
 if __name__ == '__main__':
     main()
-    
-    
-
-
-
-
-
